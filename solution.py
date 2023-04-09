@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
+chat_id = 260376781 # Ваш chat ID, не меняйте название переменной
+
+from scipy.stats import ks_2samp
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    p_val = ks_2samp(x, y).pvalue
+    answer = False if p_val > 0.01 else True
+    return answer # Ваш ответ, True или False
